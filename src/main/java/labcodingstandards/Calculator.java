@@ -1,24 +1,28 @@
-//
-//
-
+// Copyright (C) 2020
+// All rights reserved
 package labcodingstandards;
 
 import java.util.Scanner;
 
 
 /**
- * @author
+ *@author  Group 9 
  *
  */
 public class Calculator {	
+	//CHECKSTYLE: OFF
 	
+	/**
+	 * This is the main method for the calculator  
+	 *@param args
+	 */
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		
         System.out.print("1. +\n2. -\n3. *\n4. /\nEnter an operator: ");
         
         char operator = reader.nextLine().charAt(0);
-        double First;
+        double first;
         double second;
         String input;
         
@@ -27,7 +31,7 @@ public class Calculator {
         	input = reader.nextLine();
         	
             try {
-            	First=Integer.parseInt(input);
+            	first=Integer.parseInt(input);
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Not valid!");
@@ -47,13 +51,21 @@ public class Calculator {
         }
 
         Calculator cal=new Calculator();
-        String result=cal.Operation(First,second,operator);
+        String result=cal.Operation(first, second, operator);
 
         System.out.printf(result);
 		reader.close();
-	}
+	}//CHECKSTYLE: ON
 
-	private String Operation(double first,double second,char operator) {
+	/**
+	 * This method determines which operation is going to be performed by the calculator based on the 
+	 * operator parameter. 
+	 * @param first
+	 * @param second
+	 * @param operator
+	 *@return String
+	 */
+	private String operation(double first, double second, char operator) {
 		double result = 0;
 		switch(operator)
         {
